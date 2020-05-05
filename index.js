@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ⭐️ Example Challenge start ⭐️
 
 /**
@@ -35,9 +36,11 @@ function addNumbers(num1, num2) {
  * the returned value should look like: 'Goodbye, Andy. Have a great day.'
  * 
 */
-function sayGoodbye(/* code here */) {
-  /* code here */
+function sayGoodbye(name) {
+
+  return (`'Goodbye, ${name}. Have a great day.'`)
 }
+sayGoodbye('Andy');
 
 /**
  * ### Challenge `temperatureCtoF`
@@ -53,9 +56,11 @@ function sayGoodbye(/* code here */) {
  * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature in celsius.
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
-function temperatureCtoF(/* code here */) {
+function temperatureCtoF(t) {
   /* code here */
+  return Math.round(t*9/5+32);
 }
+temperatureCtoF(30)
 
 /**
  * ### Challenge `temperatureInF`
@@ -95,9 +100,12 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject( firsName, lastName) {
+  return `${person} ${firsName} ${lastName}`
 }
+console.log("id", 5);
+console.log("name:", "Leia");
+console.log("email:","leia@leia.com");
 
 /**
  * ### Challenge `getName`
@@ -112,9 +120,15 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(person) {
+  return 'Hello, my name is ' + person.name.email;
 }
+  var person = {
+  id: 1,
+  name: 'Leia',
+  email: 'leiaa@leia.com',
+};
+console.log(getName(person));
 
 
 /**
@@ -209,9 +223,10 @@ function get3rdCar(inventory) {
  * For example, if getCarInfoByIndex is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoByIndex(inventory, index) {
-  /* code here */
-}
+let lastCar = 0;
+console.log();
+lastCar = inventory.length-1;
+console.log("Make for the last car is "+inventory[lastCar]["car_make"]+" "+"and Model for the last car is "+inventory[lastCar]["car_model"]);
 
 /**
  * ### Challenge `getLastCarInfo`
@@ -224,9 +239,15 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+let carModels = [];
+console.log();
+
+for(let i=0; i<inventory.length; i++){
+  carModels[i] = inventory[i]["car_model"];
 }
+
+let sortedList= carModels.sort();
+console.log(sortedList);
 
 /**
  * ### Challenge `getModelYears`
@@ -237,9 +258,14 @@ function getLastCarInfo(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(/* code here */) {
-  /* code here */
+let carYears = [];
+console.log();
+
+for(let i=0; i<inventory.length; i++){
+  carYears[i] = inventory[i]["car_year"];
 }
+
+console.log(carYears);
 
 /**
  * ### Challenge `getCarInfoById`
@@ -255,9 +281,7 @@ function getModelYears(/* code here */) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
-  /* code here */
-}
+
 
 /**
  * ### Challenge `getOlderCars`
